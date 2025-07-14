@@ -279,6 +279,28 @@ export interface ChartData {
   }>;
 }
 
+// Admin types
+export interface AdminStats {
+  total_users: number;
+  total_meals: number;
+  total_categories: number;
+  avg_calories_per_day: number;
+  recent_users: AdminUser[];
+}
+
+export interface AdminUser {
+  id: number;
+  username: string;
+  first_name: string;
+  last_name: string;
+  email: string;
+  is_active: boolean;
+  is_admin: boolean;
+  meal_count: number;
+  created_at: string;
+  last_login?: string;
+}
+
 // Socket types
 export interface SocketEvent {
   meal_created: { meal: Meal; user_id: number };
